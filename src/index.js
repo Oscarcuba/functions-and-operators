@@ -1,78 +1,111 @@
-function add(a, b){
+function add(a, b) {
   // add the two arguments and return the sum
   return a + b;
 }
 
-function multiply(){
+function multiply(a, b, c, d) {
   // this function is passed 4 parameters
   // multiply them and return the result
+  return a * b * c * d;
 }
 
-function average(){
+function average(a, b, c, d, e) {
   // this function is passed 5 heights in meters
   // calculate their average and return it
+  return (a + b + c + d + e) / 5;
+
 }
 
-function remainder(){
+function remainder(a, b) {
   // this function is passed 2 arguments
   // return the remainder of first
   // argument when divided by the second
+  return a % b;
+
+
 }
 
-function exponential(){
+function exponential(a, b) {
   // this function is passed 2 arguments
   // return first argument to the power of second argument
   // hint: you may need to look up the exponention operator
+  return a ** b;
 }
 
-function laxEquality(){
+function laxEquality(a, b) {
   // this function is passed 2 arguments
   // return true if they are equal but not strictly equal
+  return a == b && a !== b;
+
 }
 
-function strictEqual(){
+function strictEqual(a, b, c) {
   // function is passed 3 arguments
   // return true if they are all strictly equal and false otherwise
+  return (a === b) && (b === c);
 }
 
-function smaller(){
+function smaller(a, b) {
   // this function is passed 2 arguments
   // return true if second argument is
   // greater than or equal to first, otherwise return string 'smaller'
+  let result = b >= a ? true : 'smaller';
+  return result;
 }
 
-function isDivisibleBy(divider1, divider2, number){
+function isDivisibleBy(divider1, divider2, number) {
   // if number is divisible by divider1 or divider2 return true or false otherwise
   // do not use if/else or ternary
+  return (number % divider1 === 0 || number % divider2 === 0);
 }
 
-function evens(){
+function evens(a, b, c, d) {
   // this function is passed 4 numbers
   // return true if all numbers are even or false otherwise
   // do not use if/else or ternary
+  return (a % 2 === 0) && (b % 2 === 0) &&
+    (c % 2 === 0) && (d % 2 === 0);
 }
 
-function removeMiddle( words ){
+function removeMiddle(words) {
   // words is an array which contains an odd number of strings
   // return a new array containing only the middle word
   // the words array should no longer contain the middle word
   // hint: splice
+  let mid = Math.trunc(words.length / 2);
+  let arry = [];
+  let midWord = words[mid];
+  arry.push(midWord);
+  words.splice(mid, 1);
+  return arry;
+
+
+
 }
 
-function get2ndAnd3rd( myArray ){
+function get2ndAnd3rd(myArray) {
   // myArray is an array of numbers
   // return an array containing the 2nd and 3rd items from myArray
   // myArray should remain unchanged
   // hint: slice
+
+
+  return myArray.slice(1, 3);
 }
 
-function mapper( myArray ){
+function mapper(myArray) {
   // myArray is an array of numbers
   // return a new array which has all items in myArray incremented by one
   // myArray should remain unchanged
+
+  const result = myArray.map(function(item) {
+    return item + 1;
+
+  });
+  return result;
 }
 
-function wordLengths( words ){
+function wordLengths(words) {
   // words is an array of strings
   // return a new array that contains the number of letters in each word
   // for example
@@ -80,9 +113,15 @@ function wordLengths( words ){
   // [ 'jupiter', 'mars', 'saturn' ]
   // output:
   // [ 7, 4, 6]
+  let newArry = [];
+  for (item of words) {
+
+    newArry.push(item.length);
+  };
+  return newArry;
 }
 
-function cities( capitals, formatter ){
+function cities(capitals, formatter) {
   // capitals is an array of objects that have a city and country property
   // for example
   // {
@@ -94,56 +133,71 @@ function cities( capitals, formatter ){
   // 'Paris is the capital of France'.
   // Apply formatter to each object in capitals array and
   // return an array of resulting sentences
+  let newArry = capitals.map(formatter);
+  return newArry;
 }
 
-function largerThanTen( numbers ){
+function largerThanTen(numbers) {
   // numbers is an array of numbers
   // return a new array that contains only numbers
   // from the input array which are greater than 10
+  let newArry = numbers.filter(function(item) {
+
+    return item > 10;
+
+  });
+  return newArry;
 }
 
-function even( numbers ){
+function even(numbers) {
   // numbers is an array of numbers
   // return a new array that contains only even numbers from the input array
+  let newArry = numbers.filter(function(item) {
+
+    return item % 2 === 0;
+
+  });
+  return newArry;
 }
 
-function findTheNeedle( words ){
+function findTheNeedle(words) {
   // words is an array of words
   // return the index of the word 'needle'
+  return words.indexOf('needle');
 }
 
-function findLargest( numbers ){
+function findLargest(numbers) {
   // numbers is an array of numbers
   // return the largest number from that array
 }
 
-function addAllnumbers( numbers ) {
+function addAllnumbers(numbers) {
   // numbers is an array of numbers
   // return the sum of all the numbers in the array
 }
 
-function averages( things ) {
+function averages(things) {
   // things is an array of numbers and strings
   // return the average of all the numbers
   // be sure to exclude the strings
 }
 
-function sortingStrings(strings){
+function sortingStrings(strings) {
   // strings is an array of strings
   // sort them in alphabetical order and return the sorted array
 }
 
-function sortingNumbers(numbers){
+function sortingNumbers(numbers) {
   // things is an array of sortingStrings
   // sort them in ascending order and return the sorted array
 }
 
-function sortingNumbersDescending(numbers){
+function sortingNumbersDescending(numbers) {
   // things is an array of sortingStrings
   // sort them in descending order and return the sorted array
 }
 
-function sortingCars(cars){
+function sortingCars(cars) {
   // a car object has a make, model, year. For example
   // const car = {
   //   make: 'Ford',
@@ -155,7 +209,7 @@ function sortingCars(cars){
   // the sorted array.
 }
 
-function deleteColour( car ){
+function deleteColour(car) {
   // car is an object with properties make, model and color. For example
   // {
   //   make: 'Ford',
@@ -166,7 +220,7 @@ function deleteColour( car ){
   // delete the property colour and return car without this property
 };
 
-function paintShop( cars, colour ){
+function paintShop(cars, colour) {
   // cars is an array of objects that have
   // their properties are `make`, `model` and `colour`
 
@@ -184,13 +238,13 @@ function paintShop( cars, colour ){
   // hint: look up 'Cloning objects in JavaScript'
 }
 
-function secondLargest( numbers ){
+function secondLargest(numbers) {
   // numbers is an array of numbers
   // return the index of the second
   // largest number in the array
 }
 
-function addSales( city, sales ){
+function addSales(city, sales) {
   // Argument city is a string containing city name
   // Argument sales is a integer containing the sales
   // for that location
@@ -210,7 +264,7 @@ function addSales( city, sales ){
   // return the updated globalSales object
 }
 
-function totalSales( sales ){
+function totalSales(sales) {
   // You are passed a sales object similar to the one
   // in the previous exercise. Add up all the sales figures
   // and return the total.
@@ -218,7 +272,7 @@ function totalSales( sales ){
   // Hint: look up how to get the values of an object
 }
 
-function walletSum( wallet ){
+function walletSum(wallet) {
   // A wallet object has keys which are the denominations
   // and values which are the number of those notes in the
   // wallet. See example below.
@@ -235,21 +289,21 @@ function walletSum( wallet ){
   // the denominations used in this exercise are 5, 10 and 20
 }
 
-function walletMerge( wallet1, wallet2 ){
+function walletMerge(wallet1, wallet2) {
   // return a new wallet object containing the contents of
   // both wallets passed in.
 
   // the denominations used in this exercise are 5, 10 and 20
 }
 
-function arrayOfWallets( wallets ){
+function arrayOfWallets(wallets) {
   // wallets is an array of wallets
 
   // Return a new wallet object containing the notes from all wallets
   // the denominations used in this exercise are 5, 10 and 20
 }
 
-function crazyMoney( wallets ){
+function crazyMoney(wallets) {
   // In previous exercises the notes denominations were
   // limited to 5, 10 and 20. We now have wallets that
   // can have notes of any denomination. Implement a function
